@@ -17,7 +17,7 @@ class App extends React.Component {
 
 		YTSearch({ key: API_KEY, term: 'bmw' }, videos => {
 			// ES6 syntax for this.setState({ videos: videos});
-			this.setState({ videos });
+			this.setState({ videos: videos, selectedVideo: videos[0] });
 		});
 	}
 	render() {
@@ -25,8 +25,13 @@ class App extends React.Component {
 			<div>
 				<SearchBar />
 				<div className="row">
-					<VideoDetail video={this.state.videos[0]} />
-					<VideoList videos={this.state.videos} />
+					<VideoDetail video={this.state.selectedVideo} />
+					<VideoList
+						onVideoSelect={selectedVideo =>
+							this.setState({ selectedVideo })
+						}
+						videos={this.state.videos}
+					/>
 				</div>
 			</div>
 		);
