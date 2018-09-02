@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // import App from './App';
+import VideoList from './components/video_list';
 import registerServiceWorker from './registerServiceWorker';
 
 import SearchBar from './components/search_bar';
@@ -29,6 +30,7 @@ class App extends React.Component {
 		return (
 			<div>
 				<SearchBar />
+				<VideoList videos={this.state.videos} />
 			</div>
 		);
 	}
