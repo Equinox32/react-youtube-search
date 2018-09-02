@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom';
 // import App from './App';
 import VideoList from './components/video_list';
 import registerServiceWorker from './registerServiceWorker';
-
+import 'bootstrap/dist/css/bootstrap.min.css'; // import Bootstrap CSS library
+import './index.css'; // in addition, import our own CSS specs
 import SearchBar from './components/search_bar';
 import YTSearch from 'youtube-api-search';
+import VideoDetail from './components/video_detail';
 const API_KEY = 'AIzaSyDhC2esTZVGXLuIa-xW4pAZ3xtNfegogJE';
 
 // const App = () => {
@@ -30,7 +32,10 @@ class App extends React.Component {
 		return (
 			<div>
 				<SearchBar />
-				<VideoList videos={this.state.videos} />
+				<div className="row">
+					<VideoDetail video={this.state.videos[0]} />
+					<VideoList videos={this.state.videos} />
+				</div>
 			</div>
 		);
 	}
