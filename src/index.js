@@ -7,6 +7,7 @@ import './index.css'; // in addition, import our own CSS specs
 import SearchBar from './components/search_bar';
 import YTSearch from 'youtube-api-search';
 import VideoDetail from './components/video_detail';
+import _ from 'lodash';
 
 const API_KEY = 'AIzaSyDhC2esTZVGXLuIa-xW4pAZ3xtNfegogJE';
 
@@ -26,11 +27,13 @@ class App extends React.Component {
 		});
 	}
 	render() {
+		const videoSearch = _.debounce(term => {
+			this.videoSearch(term);
+		}, 500);
+
 		return (
 			<div>
-				<SearchBar
-					onSearchTermSearch={term => this.videoSearch(term)}
-				/>
+				<SearchBar onSearchTermSearch={videoSearch} />
 				<div className="row">
 					<VideoDetail video={this.state.selectedVideo} />
 					<VideoList
