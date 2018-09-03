@@ -14,16 +14,23 @@ class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = { videos: [], selectedVideo: null };
-
-		YTSearch({ key: API_KEY, term: 'bmw' }, videos => {
+		this.videoSearch('bmw M235i');
+	}
+	videoSearch(term) {
+		YTSearch({ key: API_KEY, term: term }, videos => {
 			// ES6 syntax for this.setState({ videos: videos});
-			this.setState({ videos: videos, selectedVideo: videos[0] });
+			this.setState({
+				videos: videos,
+				selectedVideo: videos[0]
+			});
 		});
 	}
 	render() {
 		return (
 			<div>
-				<SearchBar />
+				<SearchBar
+					onSearchTermSearch={term => this.videoSearch(term)}
+				/>
 				<div className="row">
 					<VideoDetail video={this.state.selectedVideo} />
 					<VideoList
