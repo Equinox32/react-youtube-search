@@ -6,7 +6,7 @@ class SearchBar extends React.Component {
 		return (
 			<div className="">
 				<Navbar bg="dark" variant="dark">
-					<Navbar.Brand href="#home">Youtube Search App</Navbar.Brand>
+					<Navbar.Brand href="#home">YouTube Search App</Navbar.Brand>
 				</Navbar>
 			</div>
 		);

@@ -6,6 +6,7 @@
     "bootstrap": "^4.3.1",
     "dotenv": "^6.2.0",
     "lodash": "^4.17.11",
+    "moment": "^2.24.0",
     "react": "^16.4.2",
     "react-app-env": "^1.2.3",
     "react-bootstrap": "^1.0.0-beta.5",

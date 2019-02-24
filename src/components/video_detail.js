@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 const VideoDetail = ({ video }) => {
 	if (!video) {
@@ -7,6 +8,7 @@ const VideoDetail = ({ video }) => {
 
 	const videoId = video.id.videoId;
 	const url = `https://www.youtube.com/embed/${videoId}`;
+	const publishDate = video.snippet.publishedAt;
 
 	return (
 		<div className="video-detail col-md-8">
@@ -22,6 +24,11 @@ const VideoDetail = ({ video }) => {
 			<div className="details">
 				<div>{video.snippet.title}</div>
 				<div>{video.snippet.description}</div>
+				<div>
+					<small>
+						{moment(publishDate).format('MMMM Do YYYY, h:mm:ss a')}
+					</small>
+				</div>
 			</div>
 		</div>
 	);
