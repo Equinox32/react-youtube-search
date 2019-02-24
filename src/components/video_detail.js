@@ -6,8 +6,6 @@ const VideoDetail = ({ video }) => {
 	}
 
 	const videoId = video.id.videoId;
-	// ES6 syntax for
-	// const url = 'https://www.youtube.com/embed/' + 'videoId';
 	const url = `https://www.youtube.com/embed/${videoId}`;
 
 	return (
