@@ -1,7 +1,12 @@
+:root {
+  --main-bg-color: #e6e6e6;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
+  background-color: var(--main-bg-color);
 }
 
 .row {
@@ -15,13 +20,22 @@ body {
 .video-detail .details {
   margin-top: 10px;
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid #444;
   border-radius: 4px;
+}
+
+.list-group-item:not(:first-child) {
+  margin-top: 10px;
 }
 
 .list-group-item {
   cursor: pointer;
+  background-color: var(--main-bg-color);
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 4px;
 }
+
 
 .list-group-item:hover {
   background-color: #eee;
