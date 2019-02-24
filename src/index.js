@@ -6,6 +6,7 @@ import './index.css'; // in addition, import our own CSS specs
 import SearchBar from './components/search_bar';
 import YTSearch from 'youtube-api-search';
 import VideoDetail from './components/video_detail';
+import Navbar from './components/navbar';
 import _ from 'lodash';
 require('dotenv').config();
 
@@ -42,6 +43,7 @@ class App extends React.Component {
 
 		return (
 			<div>
+				<Navbar />
 				<SearchBar onSearchTermSearch={videoSearch} />{' '}
 				<div className="row">
 					<VideoDetail video={this.state.selectedVideo} />{' '}
